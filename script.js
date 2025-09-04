@@ -1,3 +1,6 @@
+const { Marked } = window.marked;
+const { markedHighlight } = window.markedHighlight;
+
 const markdownInput = document.getElementById("markdown");
 const markdownOutput = document.getElementById("preview-content");
 
@@ -6,7 +9,7 @@ hljs.addPlugin(
         autohide: false
     })
 );
-marked.use(
+const marked = new Marked(
     markedHighlight({
         emptyLangClass: "hljs",
         langPrefix: "hljs language-",

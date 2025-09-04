@@ -1,0 +1,22 @@
+const markdownInput = document.getElementById("markdown");
+const markdownOutput = document.getElementById("preview-content");
+
+hljs.addPlugin(
+    new CopyButtonPlugin({
+        autohide: false
+    })
+);
+marked.use(
+    markedHighlight({
+        emptyLangClass: "hljs",
+        langPrefix: "hljs language-",
+        highlight(code, lang, info) {
+            const language = hljs.getLanguage(lang) ? lang : "plaintext";
+            return hljs.highlight(code, { language }).value;
+        }
+    })
+);
+
+markdownInput.addEventListener("input", function() {
+    markdownOutput.innerHTML = marked.parse(markdownInput.value);
+}, false);

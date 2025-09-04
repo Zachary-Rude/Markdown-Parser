@@ -14,10 +14,6 @@ textarea {
     resize: none;
 }
 
-header {
-    padding-top: 10px;
-}
-
 blockquote {
     border-left: 3px solid #ccc;
     margin: 1.5em 10px;

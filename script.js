@@ -6,7 +6,7 @@ const markdownOutput = document.getElementById("preview-content");
 
 hljs.addPlugin(
     new CopyButtonPlugin({
-        autohide: false
+        autohide: false,
     })
 );
 const marked = new Marked(

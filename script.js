@@ -1,6 +1,4 @@
-hljs.addPlugin(new CopyButtonPlugin({
-    autohide: false,
-}));
+hljs.addPlugin(new CopyButtonPlugin());
 
 const { Marked } = window.marked;
 const { markedHighlight } = window.markedHighlight;

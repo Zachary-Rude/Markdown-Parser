@@ -22,7 +22,7 @@ blockquote {
 
 blockquote p {
     display: inline-block;
-    color: #ccc;
+    color: #3b4045;
 }
 
 a {
@@ -65,7 +65,7 @@ a:visited, a:active {
     display: flex;
 }
 
-#preview iframe {
+#preview #preview-content {
     flex-grow: 1;
 }
 

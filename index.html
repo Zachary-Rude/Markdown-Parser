@@ -6,11 +6,32 @@
         <title>Markdown Parser</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css">
         <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
+            <h1>Markdown Parser</h1>
+            <p>This is a simple Markdown parser made using <a href="https://github.com/markedjs/marked">MarkedJS</a> for the main Markdown parsing functionality <a href="https://github.com/highlightjs/highlight.js">HighlightJS</a> for syntax highlighting, and <a href="https://github.com/arronhunt/highlightjs-copy">HighlightJS-copy</a> to add a code copy button similar to what Github provides.</p>
+        </header>
+        <div class="containers">
+            <div class="container">
+                <div class="label">Markdown Input</div>
+                <textarea id="markdown" class="inputPane"></textarea>
+            </div>
+            <div class="container">
+                <div class="label">Rendered Markdown</div>
+                <div id="preview" class="pane">
+                    <noscript>
+                        <h2>You'll need to enable JavaScript in order to use this tool.</h2>
+                    </noscript>
+                    <div id="preview-content"></div>
+                </div>
+            </div>
+        </div>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
         <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked-highlight@2.2.2/lib/index.umd.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -23,10 +23,10 @@ markdownInput.addEventListener("input", function() {
     var numberOfSnippets = snippets.length;
 
     for (var i = 0; i < numberOfSnippets; i++) {
-        code = snippets[i].getElementsByTagName("code")[0].innerText;
         snippets[i].classList.add("hljs"); // append copy button to pre tag
         snippets[i].innerHTML = "<button class=\"hljs-copy-button\">Copy</button>" + snippets[i].innerHTML; // append copy button
         snippets[i].getElementsByClassName('hljs-copy-button')[0].addEventListener("click", function () {
+            code = this.parentNode.getElementsByTagName("code")[0].innerText;
             this.innerText = 'Copying..';
             navigator.clipboard.writeText(code);
             this.dataset.copied = true;

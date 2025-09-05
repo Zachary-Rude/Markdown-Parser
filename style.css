@@ -69,20 +69,58 @@ a:visited, a:active {
     flex-grow: 1;
 }
 
-/* highlightjs-copy overrides */
-.hljs-copy-button:not([data-copied='true']) {
-    cursor: pointer;
+/* taken and modified from highlightjs-copy */
+.hljs-copy-button {
+    position: absolute;
+    float: right;
+    margin: calc(var(--hljs-theme-padding) / 2);
+    width: calc(16px + var(--hljs-theme-padding));
+    height: calc(16px + var(--hljs-theme-padding));
+    font-size: 0.8125rem;
+    text-indent: -9999px; /* Hide the inner text */
+    color: var(--hljs-theme-color);
+    border-radius: 0.25rem;
+    border: 1px solid;
+    border-color: color-mix(in srgb, var(--hljs-theme-color), transparent 80%);
+    background-color: var(--hljs-theme-background);
+    transition: background-color 200ms ease;
+    overflow: hidden;
+}
+
+.hljs-copy-button::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center center;
+}
+
+.hljs-copy-button:hover {
+    background-color: color-mix(
+        in srgb,
+        var(--hljs-theme-color),
+        transparent 90%
+    );
+}
+
+.hljs-copy-button:active {
+    border-color: color-mix(in srgb, var(--hljs-theme-color), transparent 60%);
 }
 
 .hljs-copy-button:not([data-copied='true'])::before {
     mask: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%23000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>');
 }
 
-.hljs-copy-button[data-copied='true'] {
-  width: calc(16px + var(--hljs-theme-padding));
-  text-indent: -9999px;
+.hljs-copy-button[data-copied='true']::before {
+    mask: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%2316a34a"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
 }
 
-.hljs-copy-button[data-copied='true']::before {
-  mask: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%2316a34a"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+.hljs-copy-button:not([data-copied='true']) {
+    cursor: pointer;
 }

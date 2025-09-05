@@ -102,7 +102,7 @@ code.hljs {
     border-radius: 0.25rem;
     border: 1px solid;
     border-color: color-mix(in srgb, var(--hljs-theme-color), transparent 80%);
-    transition: background-color 200ms ease;
+    transition: background-color 200ms ease, border-color 200ms ease;
     overflow: hidden;
 }
 
@@ -138,7 +138,8 @@ code.hljs {
 
 .hljs-copy-button[data-copied='true']::before {
     mask: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%2316a34a"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
-    color: #16a34a
+    color: #16a34a;
+    border-color: #16a34a;
 }
 
 .hljs-copy-button:not([data-copied='true']) {

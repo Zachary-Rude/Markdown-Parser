@@ -91,7 +91,7 @@ code.hljs {
 .hljs-copy-button {
     --hljs-theme-padding: 16px;
     --hljs-theme-color: #444;
-    position: absolute;
+    position: relative;
     float: right;
     margin: calc(var(--hljs-theme-padding) / 2);
     width: calc(16px + var(--hljs-theme-padding));

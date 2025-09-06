@@ -94,7 +94,7 @@ code.hljs {
     opacity: 0;
 }
 
-.copiedIndicator:not([data-copied='true']) {
+.copiedIndicator[data-copied='true'] {
     visibility: visible;
     opacity: 1;
 }

@@ -23,6 +23,7 @@ blockquote {
 blockquote p {
     display: inline-block;
     color: #3b4045;
+    margin: 0;
 }
 
 a {
